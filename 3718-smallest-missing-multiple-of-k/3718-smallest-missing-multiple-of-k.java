@@ -4,10 +4,9 @@ class Solution {
         for(int n:nums){
             set.add(n);
         }
-        int tmp=k;
-        for(int i=k;set.contains(tmp);i+=k){
-            tmp=i;
-        }
-        return tmp;
+        int i=0;
+
+        for( i=k;set.contains(i);i+=k);
+        return i;
     }
 }
