@@ -5,17 +5,18 @@ class Solution {
         for(int i=0;i<arr.length;i++){
             if(!visited[i]){
                 pr++;
-                dfs(arr,visited,i);
+                dfs(arr,i,visited);
             }
         }
         return pr;
     }
-    void dfs(int[][] arr,boolean[] visited,int src){
-        visited[src]=true;
-        for(int nbr=0;nbr<arr.length;nbr++){
-            if(arr[src][nbr]==1&&!visited[nbr]){
-                dfs(arr,visited,nbr);
+    void dfs(int[][] arr,int v,boolean[] visited){
+        visited[v]=true;
+        for(int i=0;i<arr.length;i++){
+            if(arr[v][i]==1&&!visited[i]){
+                dfs(arr,i,visited);
             }
         }
+
     }
 }
