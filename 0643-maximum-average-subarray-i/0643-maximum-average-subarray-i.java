@@ -7,11 +7,9 @@ class Solution {
             sum+=arr[i];
         }
         maxSum=sum;
-        int l=0;
         for(int i=k;i<arr.length;i++){
-            sum=sum+arr[i]-arr[l];
+            sum=sum+arr[i]-arr[i-k];
             maxSum=Math.max(sum,maxSum);
-            l++;
         }
         return (double)maxSum/k;
     }
