@@ -5,7 +5,9 @@ class Solution {
             map.put(c,map.getOrDefault(c,0)+1);
         }
         PriorityQueue<Character> pq=new PriorityQueue<>((a,b)->map.get(b)-map.get(a));
-        pq.addAll(map.keySet());
+        for(char ch:map.keySet()){
+            pq.offer(ch);
+        }
         StringBuilder sb=new StringBuilder();
         while(!pq.isEmpty()){
             char ch=pq.poll();
